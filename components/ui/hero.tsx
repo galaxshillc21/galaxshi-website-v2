@@ -28,11 +28,11 @@ export default function Hero() {
       <div className="sticky top-0 h-[100vh] w-[100vw] overflow-hidden top-0 left-0 z-0">
         <Vortex backgroundColor="black" rangeY={200} particleCount={200} baseHue={200} className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full">
           <div className="hero-copy">
-            <h1 className="text-white/80 text-2xl md:text-9xl font-bold text-center white-glow">
+            <h1 className="text-2xl md:text-9xl font-bold text-center white-glow animate-[blur-in_1.2s_ease-out_forwards]">
               GALAX<span className="italic">SHI</span>
             </h1>
-            <p className="text-white text-center md:text-2xl max-w-2xl mt-6">We build web experiences that look stunning, perform flawlessly, and grow with your business.</p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6 hero-button">
+            <p className="text-white text-center md:text-2xl max-w-2xl mt-6 opacity-0 animate-[fade-in_0.8s_ease-out_0.6s_forwards]">We build web experiences that look stunning, perform flawlessly, and grow with your business.</p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6 hero-button opacity-0 animate-[fade-in_0.8s_ease-out_1s_forwards]">
               <a href="mailto:galaxshi.llc@gmail.com" className="bg-[#170d27ff] px-6 py-3 rounded-xl text-[#b19eefff] font-medium hover:opacity-95 transition border border-purple-50/20 hover:border-purple-50/40 caret-transparent" aria-label="Contact Galaxshi">
                 Contact us
               </a>

@@ -79,5 +79,39 @@
 }
 
 .white-glow {
-  text-shadow: 0 0 2px #ffffff1a, 0 0 4px #ffffff4d, 0 0 8px #fff3, 0 0 136px #783cff66;
+  text-shadow: 0 0 2px #ffffff1a, 0 0 8px #ffffff4d, 0 0 8px #fff3, 0 0 136px #783cff66;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@keyframes blur-in {
+  0% {
+    filter: blur(20px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blur-in-up {
+  0% {
+    filter: blur(10px);
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
