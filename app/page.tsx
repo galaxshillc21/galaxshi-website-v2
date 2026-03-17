@@ -1,30 +1,22 @@
-import { Vortex } from "@/components/ui/vortex";
+import Hero from "@/components/Hero";
+import Process from "@/components/Process";
+import Services from "@/components/Services";
+import Technologies from "@/components/Technologies";
+import Problems from "@/components/Problems";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="">
-      <div id="Hero" className="w-full mx-auto h-screen overflow-hidden flex bg-white items-center justify-center">
-        <div className="container rounded-3xl overflow-hidden h-[600px]">
-          <Vortex backgroundColor="black" rangeY={100} particleCount={200} baseHue={200} className="flex items-center justify-center px-2 md:px-10 py-4 w-full h-full">
-            <div className="flex flex-col md:flex-row w-full h-full items-center justify-center">
-              {/* Left column: Hero content */}
-              <div className="flex flex-col items-center">
-                <h1 className="text-white text-2xl md:text-6xl font-bold text-center">Transform Your Website Today</h1>
-                <h2>We don't just build websites; we build scalable, data-driven platforms designed for growth.</h2>
-                <p className="text-white text-center md:text-2xl max-w-2xl mt-6">Our mission is to build digital platforms that don't just look incredible, they perfom. We are modern web developers and strategists dedicated to your bottom line. Stop guessing, start growing.</p>
-                <div className="flex flex-col sm:flex-row items-center md:items-start gap-4 mt-6">
-                  {/* <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 transition duration-200 rounded-lg text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset]">
-                  Order now
-                </button> */}
-                </div>
-                <button className="rounded-full bg-white px-[45px] py-[10px] bg-violet-500 text-violet-50">Get Started</button>
-              </div>
-            </div>
-          </Vortex>
-        </div>
-      </div>
+      <Hero />
+      <Process />
+
+      <Technologies />
+
+      <Services />
+
+      <Problems />
 
       {/* About Section */}
       <div id="About" className="w-full mx-auto  bg-white">
@@ -32,9 +24,9 @@ export default function Home() {
           {/* Left column: Title and paragraph */}
           <div className="flex flex-col md:w-3/5 w-full items-start justify-center px-4">
             <h3 className="text-violet-500 text-l md:text-xl font-bold mb-6">About Us</h3>
-            <h2 className="text-violet-500 text-3xl md:text-5xl font-bold mb-6">We're Web Designers & Developers</h2>
+            <h2 className="text-violet-500 text-3xl md:text-5xl font-bold mb-6">We&apos;re Web Designers &amp; Developers</h2>
 
-            <p className="text-slate-600 text-lg md:text-xl max-w-2xl">We're Alfredo and Sheila, and we're not just business partners-we're a team of two passionate developers dedicated to building modern, functional, and beautiful websites for clients of all sizes. We combine our dual expertise to offer a unique, integrated approach.</p>
+            <p className="text-slate-600 text-lg md:text-xl max-w-2xl">We&apos;re Alfredo and Sheila, and we&apos;re not just business partners—we&apos;re a team of two passionate developers dedicated to building modern, functional, and beautiful websites for clients of all sizes. We combine our dual expertise to offer a unique, integrated approach.</p>
             {/* Button link to another page */}
             <Link href="/about">
               <button className="mt-8 px-6 py-3 bg-violet-500 hover:bg-violet-600 text-white font-semibold rounded-full transition duration-200">Learn More About Us</button>
@@ -131,7 +123,7 @@ export default function Home() {
       <div className="w-full bg-gradient-to-r from-violet-600 to-blue-500 py-12 flex items-center justify-center">
         <div className="container mx-auto flex flex-col items-center justify-center px-4">
           <h2 className="text-white text-2xl md:text-3xl font-bold text-center mb-4">Why Work With Us?</h2>
-          <p className="text-white md:text-xl text-lg text-center max-w-2xl">When you hire us, you're not just getting two freelancers—you're getting a dedicated, cohesive team with a shared vision for your success.</p>
+          <p className="text-white md:text-xl text-lg text-center max-w-2xl">When you hire us, you&apos;re not just getting two freelancers—we&apos;re getting a dedicated, cohesive team with a shared vision for your success.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 w-full max-w-4xl">
             {/* Integration */}
             <div className="flex flex-col items-center justify-center">
@@ -176,7 +168,7 @@ export default function Home() {
           {/* Left column: Title and paragraph */}
           <div className="flex flex-col md:w-1/2 w-full items-start justify-center px-4 mb-10 md:mb-0">
             <h2 className="text-blue-700 text-3xl md:text-5xl font-bold mb-6">Contact Us</h2>
-            <p className="text-blue-900 text-lg md:text-2xl max-w-md">We'd love to hear from you! Fill out the form and we'll get back to you as soon as possible.</p>
+            <p className="text-blue-900 text-lg md:text-2xl max-w-md">We&apos;d love to hear from you! Fill out the form and we&apos;ll get back to you as soon as possible.</p>
           </div>
           {/* Right column: Contact Form */}
           <form className="flex flex-col md:w-1/2 w-full gap-4 px-4">
