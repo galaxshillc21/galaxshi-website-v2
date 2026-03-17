@@ -108,7 +108,7 @@ export default function About() {
         </motion.h2>
 
         <motion.p className="text-purple/80 text-center mt-4 max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={blurInUpVariant} transition={{ delay: 0.2 }}>
-          We help entrepreneurs like you ditch the ordinary and claim the premium brand presence you've always wanted. We build fast, accessible, and beautiful web experiences.
+          We help entrepreneurs like you ditch the ordinary and claim the premium brand presence you&apos;ve always wanted. We build fast, accessible, and beautiful web experiences.
         </motion.p>
 
         {/* Layout: on md+ show side text blocks overlapping image; on small screens stack */}
