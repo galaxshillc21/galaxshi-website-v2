@@ -75,7 +75,7 @@ export default function Technologies() {
     <section id="Technologies" className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex justify-center">
-          <span className="inline-block px-4 py-2 bg-slate-50 text-slate-600 rounded-full mb-4">Tecnologías</span>
+          <span className="inline-block px-4 py-2 bg-green-50 text-green-600 rounded-full mb-4">Tecnologías</span>
         </div>
 
         <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 text-center">Expertos en las herramientas que usas</h2>

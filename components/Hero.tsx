@@ -55,7 +55,7 @@ export default function Hero() {
             {/* Right column: image card */}
             <div className="flex items-center justify-center py-12 md:py-24 px-2">
               <div className="w-full max-w-md md:max-w-lg lg:max-w-xl rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/10 border border-white/5 bg-gradient-to-br from-[#07142a] to-transparent">
-                <Image src="/images/alfredoysheila.jpg" alt="Analytic dashboard" width={1400} height={900} className="w-full h-full object-cover block" priority />
+                <Image src="/images/hero-portrait.jpg" alt="Analytic dashboard" width={1400} height={900} className="w-full h-full object-cover block" priority />
               </div>
             </div>
           </div>
