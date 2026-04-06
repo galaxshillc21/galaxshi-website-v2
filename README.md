@@ -20,6 +20,18 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Google Tag Manager (GTM)
+
+This project uses the official Next.js GTM integration via `@next/third-parties/google`.
+
+Create a `.env.local` file and add your container ID:
+
+```bash
+NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
+```
+
+If `NEXT_PUBLIC_GTM_ID` is not set, GTM is not loaded.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
