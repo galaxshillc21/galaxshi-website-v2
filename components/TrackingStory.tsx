@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Store } from "lucide-react";
+import Image from "next/image";
 
 const trackingCards = [
   {
@@ -22,19 +23,13 @@ export default function TrackingStory() {
       <div className="mx-auto w-[92%] max-w-6xl rounded-[2rem] border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-cyan-50 p-8 shadow-sm sm:p-10">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
           <div>
-            <p className="inline-flex rounded-full bg-slate-900 px-4 py-2 text-sm font-medium text-white">Como rastreamos esta demo</p>
-            <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">La demo no solo enseña una tienda falsa. Enseña como pensamos una implementacion real.</h2>
-            <p className="mt-4 max-w-2xl text-lg text-slate-600">El objetivo es demostrar criterio tecnico: diseño de eventos, estructura de data layer, validacion y claridad para equipos de marketing, producto y desarrollo.</p>
+            <p className="inline-flex rounded-full bg-slate-900 px-4 py-2 text-sm font-medium text-white">Tienda de demostración de GA4 y GTM</p>
+            <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Esta demo interactiva es un recurso para que descubras todo lo que se puede hacer con GA4</h2>
+            <p className="mt-4 max-w-2xl text-lg text-slate-600">El objetivo es enseñarte, de forma clara, cómo diseñamos la medición: desde los eventos clave hasta la estructura de datos y su validación, para que los equipos de marketing, producto y desarrollo trabajen con información fiable.</p>
           </div>
 
-          <div className="rounded-2xl border border-cyan-200 bg-slate-950 p-6 text-slate-100">
-            <p className="text-sm uppercase tracking-[0.18em] text-cyan-300">Entregables tipicos</p>
-            <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-300">
-              <li>Mapa de eventos y parametros para GTM.</li>
-              <li>Plan de validacion para ecommerce y formularios.</li>
-              <li>Recomendaciones de implementacion para el equipo tecnico.</li>
-              <li>Guia para evitar duplicados, huecos de medicion y datos inutiles.</li>
-            </ul>
+          <div className="relative h-[400px] w-full max-w-md overflow-hidden rounded-[1.5rem] bg-slate-100 md:h-[440px] md:max-w-lg lg:h-[480px] lg:max-w-xl">
+            <Image src="/images/demo-store.webp" alt="Analytic demo store" fill className="object-cover object-center mix-blend-multiply" priority />
           </div>
         </div>
 

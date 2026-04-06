@@ -15,15 +15,13 @@ export default function Home() {
     <main className="Main">
       <Hero />
 
-      <DemoStoreCTA />
+      <TrackingStory />
 
       <Problems />
 
       <SolutionsSection />
 
       <Services />
-
-      <TrackingStory />
 
       <Process />
 
@@ -32,6 +30,8 @@ export default function Home() {
       <AboutSection />
 
       <FAQ />
+
+      <DemoStoreCTA />
 
       <AuditForm />
     </main>
