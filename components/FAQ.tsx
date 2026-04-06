@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { Plus } from "lucide-react";
 
 const items = [
   {
@@ -48,9 +49,7 @@ export default function FAQ() {
               <button type="button" onClick={() => setOpen(open === i ? null : i)} className="w-full flex items-center justify-between px-6 py-4 text-left" aria-expanded={open === i} aria-controls={`faq-${i}`}>
                 <span className="text-slate-700">{it.q}</span>
                 <span className="ml-4 flex items-center justify-center w-8 h-8 rounded-full bg-blue-50 text-blue-600">
-                  <svg className={`w-4 h-4 transform transition-transform ${open === i ? "rotate-45" : "rotate-0"}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                  <Plus className={`h-4 w-4 transform transition-transform ${open === i ? "rotate-45" : "rotate-0"}`} />
                 </span>
               </button>
 

@@ -2,27 +2,32 @@
 
 import Link from "next/link";
 import React from "react";
+import { AppWindow, ArrowRight, BarChart3, Layers3, Tags } from "lucide-react";
 
 const services = [
   {
     title: "Implementación Profesional de GA4",
     desc: "Configuración completa de Google Analytics 4 desde cero, con eventos personalizados, conversiones y reportes adaptados a tu negocio.",
     bullets: ["Configuración de propiedades y flujos de datos", "Eventos estándar y personalizados", "Conversiones y objetivos", "Informes personalizados"],
+    icon: BarChart3,
   },
   {
     title: "Google Tag Manager – Configuración Avanzada",
     desc: "Implementación y gestión de GTM con arquitectura escalable, triggers inteligentes y debugging profesional.",
     bullets: ["Estructura de contenedores optimizada", "Variables y triggers avanzados", "Testing y depuración", "Documentación completa"],
+    icon: Tags,
   },
   {
     title: "Implementación de Data Layer",
     desc: "Diseño e implementación de Data Layer estructurado para capturar datos de forma consistente y confiable.",
     bullets: ["Arquitectura de datos personalizada", "Eventos de ecommerce completos", "Validación y testing", "Integración con GTM"],
+    icon: Layers3,
   },
   {
     title: "Integraciones WordPress y Next.js/React",
     desc: "Implementaciones técnicas especializadas para WordPress, WooCommerce y aplicaciones modernas en React/Next.js.",
     bullets: ["Plugins y hooks personalizados", "Single Page Apps (SPA)", "Server-side tracking", "Performance optimizado"],
+    icon: AppWindow,
   },
 ];
 
@@ -41,10 +46,7 @@ export default function Services() {
             <article key={i} className="group bg-gradient-to-br from-slate-50 to-white p-8 rounded-3xl border border-slate-200 hover:border-blue-300 hover:shadow-2xl border-[2px] transition-all duration-300">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-[#e6f0ff] flex items-center justify-center text-[#1e63ff]">
-                  {/* simple square icon placeholder */}
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-6 h-6" fill="none" stroke="currentColor">
-                    <path strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M3 12h6l3 8 4-16 3 8h5" />
-                  </svg>
+                  <s.icon className="h-6 w-6" />
                 </div>
 
                 <div className="flex-1">
@@ -60,9 +62,7 @@ export default function Services() {
                   <div className="mt-4">
                     <Link href="#" className="text-[#1e63ff] text-sm font-medium inline-flex items-center gap-2">
                       Más información
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor">
-                        <path strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
-                      </svg>
+                      <ArrowRight className="h-4 w-4" />
                     </Link>
                   </div>
                 </div>

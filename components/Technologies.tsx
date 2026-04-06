@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { AppWindow, BarChart3, Layers3, ShoppingBag, Tags, Workflow } from "lucide-react";
 
 const techs = [
   { name: "Google Analytics 4", key: "ga4" },
@@ -15,56 +16,19 @@ const techs = [
 function Icon({ keyName }: { keyName: string }) {
   switch (keyName) {
     case "ga4":
-      return (
-        <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="3" width="18" height="18" rx="3" fill="#fff" />
-          <path d="M6 17h3v-6H6v6zM10 13h3V7h-3v6zM14 17h4v-9h-4v9z" fill="#ff7a00" />
-        </svg>
-      );
+      return <BarChart3 className="h-7 w-7 text-orange-500" strokeWidth={1.8} />;
     case "gtm":
-      return (
-        <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="3" width="18" height="18" rx="3" fill="#fff" />
-          <path d="M7 8h10v8H7z" stroke="#2563eb" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-          <circle cx="12" cy="12" r="1.5" fill="#2563eb" />
-        </svg>
-      );
+      return <Tags className="h-7 w-7 text-blue-600" strokeWidth={1.8} />;
     case "dl":
-      return (
-        <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="3" width="18" height="18" rx="3" fill="#fff" />
-          <path d="M8 9h8v6H8z" stroke="#8b5cf6" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M10 11h4v2h-4z" fill="#8b5cf6" />
-        </svg>
-      );
+      return <Layers3 className="h-7 w-7 text-violet-500" strokeWidth={1.8} />;
     case "wp":
-      return (
-        <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="3" width="18" height="18" rx="3" fill="#fff" />
-          <path d="M6 17l6-10 6 10" stroke="#0f172a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      );
+      return <Workflow className="h-7 w-7 text-slate-900" strokeWidth={1.8} />;
     case "wc":
-      return (
-        <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="3" width="18" height="18" rx="3" fill="#fff" />
-          <path d="M7 7h10v6H7z" stroke="#a78bfa" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      );
+      return <ShoppingBag className="h-7 w-7 text-violet-400" strokeWidth={1.8} />;
     case "next":
-      return (
-        <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="3" width="18" height="18" rx="3" fill="#fff" />
-          <path d="M7 17l5-10 5 10" stroke="#0f172a" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      );
+      return <AppWindow className="h-7 w-7 text-slate-900" strokeWidth={1.8} />;
     case "react":
-      return (
-        <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="3" width="18" height="18" rx="3" fill="#fff" />
-          <path d="M12 7c2.5 0 4.5 2 4.5 4.5S14.5 16 12 16s-4.5-2-4.5-4.5S9.5 7 12 7z" stroke="#06b6d4" strokeWidth="1.5" fill="none" />
-        </svg>
-      );
+      return <Workflow className="h-7 w-7 text-cyan-500" strokeWidth={1.8} />;
     default:
       return null;
   }
