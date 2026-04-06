@@ -47,7 +47,7 @@ export default function Technologies() {
         <div className="mt-8">
           <div className="flex gap-6 items-stretch justify-center overflow-x-auto py-6 px-2">
             {techs.map((t) => (
-              <div key={t.key} className="min-w-[140px] flex-shrink-0 bg-white rounded-xl border border-slate-100 shadow-sm px-6 py-8 flex flex-col items-center text-center">
+              <div key={t.key} className="min-w-[140px] flex-shrink-0 bg-white rounded-xl border border-slate-100 shadow-sm px-6 py-8 flex flex-col items-center text-center border-[2px] transition-all duration-300 hover:border-green-400 hover:shadow-lg">
                 <div className="w-12 h-12 rounded-lg bg-slate-50 flex items-center justify-center mb-4">
                   <Icon keyName={t.key} />
                 </div>

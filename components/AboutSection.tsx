@@ -28,8 +28,8 @@ export default function AboutSection() {
             <p className="text-slate-600 mt-4">Con más de 5 años de experiencia y más de 150 proyectos completados, hemos ayudado a empresas de ecommerce, SaaS, marketplaces y medios digitales a construir sistemas de analítica confiables y escalables.</p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="flex items-start gap-4">
-                <div className="w-11 h-11 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600">
+              <div className="flex items-start gap-4 p-4 rounded-lg border border-slate-100 border-[2px] transition-all duration-300 hover:border-blue-300 hover:shadow-md">
+                <div className="w-11 h-11 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 flex-shrink-0">
                   <BadgeCheck className="h-6 w-6" />
                 </div>
                 <div>
@@ -38,8 +38,8 @@ export default function AboutSection() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-11 h-11 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600">
+              <div className="flex items-start gap-4 p-4 rounded-lg border border-slate-100 border-[2px] transition-all duration-300 hover:border-blue-300 hover:shadow-md">
+                <div className="w-11 h-11 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 flex-shrink-0">
                   <Building2 className="h-6 w-6" />
                 </div>
                 <div>
@@ -48,8 +48,8 @@ export default function AboutSection() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-11 h-11 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600">
+              <div className="flex items-start gap-4 p-4 rounded-lg border border-slate-100 border-[2px] transition-all duration-300 hover:border-blue-300 hover:shadow-md">
+                <div className="w-11 h-11 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 flex-shrink-0">
                   <Zap className="h-6 w-6" />
                 </div>
                 <div>

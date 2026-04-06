@@ -45,7 +45,7 @@ export default function FAQ() {
 
         <div className="mt-10 max-w-3xl mx-auto space-y-4">
           {items.map((it, i) => (
-            <div key={i} className="bg-white border border-slate-100 rounded-xl shadow-sm">
+            <div key={i} className="bg-white border border-slate-100 rounded-xl shadow-sm border-[2px] transition-all duration-300 hover:border-blue-300 hover:shadow-lg">
               <button type="button" onClick={() => setOpen(open === i ? null : i)} className="w-full flex items-center justify-between px-6 py-4 text-left" aria-expanded={open === i} aria-controls={`faq-${i}`}>
                 <span className="text-slate-700">{it.q}</span>
                 <span className="ml-4 flex items-center justify-center w-8 h-8 rounded-full bg-blue-50 text-blue-600">
