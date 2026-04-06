@@ -1,8 +1,35 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
+import type { FormEvent } from "react";
 
 export default function AuditForm() {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const encodedData = new URLSearchParams(Array.from(formData.entries()).map(([key, value]) => [key, String(value)])).toString();
+
+    try {
+      const response = await fetch("/__forms.html", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: encodedData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      window.location.href = "/gracias";
+    } catch {
+      window.alert("No pudimos enviar tu solicitud. Intenta nuevamente en unos minutos.");
+    }
+  };
+
   return (
     <section id="Contact" className="py-20 bg-gradient-to-b from-[#0b2a44] to-[#0b2133] text-white">
       <div className="container mx-auto px-4">
@@ -15,7 +42,7 @@ export default function AuditForm() {
 
         <div className="mt-10 max-w-3xl mx-auto">
           <div className="bg-white rounded-2xl p-8 shadow-2xl text-slate-700">
-            <form name="audit-request" method="POST" action="/gracias" data-netlify="true" data-netlify-honeypot="bot-field" className="space-y-6">
+            <form name="audit-request" onSubmit={handleSubmit} className="space-y-6">
               <input type="hidden" name="form-name" value="audit-request" />
               <p className="hidden" aria-hidden="true">
                 <label>
