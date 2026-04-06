@@ -62,7 +62,7 @@ export default function AboutSection({ content }: AboutSectionProps) {
             </div>
 
             <div className="mt-8">
-              <Link href="/about">
+              <Link href="#Contact">
                 <button className="bg-slate-900 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-2xl transition">{content.teamButton}</button>
               </Link>
             </div>

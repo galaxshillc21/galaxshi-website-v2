@@ -21,13 +21,14 @@ interface VortexProps {
 
 export const Vortex = (props: VortexProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const animationRef = useRef<number | null>(null);
   const particleCount = props.particleCount || 700;
   const particlePropCount = 9;
   const particlePropsLength = particleCount * particlePropCount;
   const rangeY = props.rangeY || 100;
-  const baseTTL = 50;
-  const rangeTTL = 150;
+  const baseTTL = 280;
+  const rangeTTL = 850;
   const baseSpeed = props.baseSpeed || 0.0;
   const rangeSpeed = props.rangeSpeed || 1.5;
   const baseRadius = props.baseRadius || 1;
@@ -61,8 +62,7 @@ export const Vortex = (props: VortexProps) => {
     if (canvas && container) {
       const ctx = canvas.getContext("2d");
 
-      if (ctx) {
-        resize(canvas, ctx);
+      if (ctx && resize(canvas)) {
         initParticles();
         draw(canvas, ctx);
       }
@@ -99,6 +99,11 @@ export const Vortex = (props: VortexProps) => {
   };
 
   const draw = (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) => {
+    if (canvas.width === 0 || canvas.height === 0) {
+      animationRef.current = window.requestAnimationFrame(() => draw(canvas, ctx));
+      return;
+    }
+
     tick++;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -110,7 +115,7 @@ export const Vortex = (props: VortexProps) => {
     renderGlow(canvas, ctx);
     renderToScreen(canvas, ctx);
 
-    window.requestAnimationFrame(() => draw(canvas, ctx));
+    animationRef.current = window.requestAnimationFrame(() => draw(canvas, ctx));
   };
 
   const drawParticles = (ctx: CanvasRenderingContext2D) => {
@@ -176,18 +181,37 @@ export const Vortex = (props: VortexProps) => {
     return x > canvas.width || x < 0 || y > canvas.height || y < 0;
   };
 
-  const resize = (canvas: HTMLCanvasElement, ctx?: CanvasRenderingContext2D) => {
-    const container = containerRef.current as HTMLDivElement | null;
+  const resize = (canvas: HTMLCanvasElement) => {
+    const container = containerRef.current;
     if (container) {
       const rect = container.getBoundingClientRect();
-      canvas.width = rect.width;
-      canvas.height = rect.height;
+      const width = Math.floor(rect.width);
+      const height = Math.floor(rect.height);
+
+      if (width <= 0 || height <= 0) {
+        canvas.width = 0;
+        canvas.height = 0;
+        return false;
+      }
+
+      if (canvas.width === width && canvas.height === height) {
+        return true;
+      }
+
+      canvas.width = width;
+      canvas.height = height;
       center[0] = 0.5 * canvas.width;
       center[1] = 0.5 * canvas.height;
+
+      return true;
     }
+
+    return false;
   };
 
   const renderGlow = (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) => {
+    if (canvas.width === 0 || canvas.height === 0) return;
+
     ctx.save();
     ctx.filter = "blur(8px) brightness(200%)";
     ctx.globalCompositeOperation = "lighter";
@@ -202,6 +226,8 @@ export const Vortex = (props: VortexProps) => {
   };
 
   const renderToScreen = (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) => {
+    if (canvas.width === 0 || canvas.height === 0) return;
+
     ctx.save();
     ctx.globalCompositeOperation = "lighter";
     ctx.drawImage(canvas, 0, 0);
@@ -210,13 +236,28 @@ export const Vortex = (props: VortexProps) => {
 
   useEffect(() => {
     setup();
-    window.addEventListener("resize", () => {
+    const handleResize = () => {
       const canvas = canvasRef.current;
-      const ctx = canvas?.getContext("2d");
-      if (canvas && ctx) {
-        resize(canvas, ctx);
+      if (canvas && resize(canvas)) {
+        initParticles();
       }
-    });
+    };
+
+    const observer = new ResizeObserver(handleResize);
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      observer.disconnect();
+
+      if (animationRef.current !== null) {
+        window.cancelAnimationFrame(animationRef.current);
+      }
+    };
   }, []);
 
   return (

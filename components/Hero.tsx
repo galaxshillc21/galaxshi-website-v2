@@ -2,28 +2,24 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import LanguageSwitch from "@/components/LanguageSwitch";
-import { Locale, SiteDictionary } from "@/utils/i18n";
+import { Vortex } from "./ui/vortex";
+import { SiteDictionary } from "@/utils/i18n";
 
 type HeroProps = {
-  lang: Locale;
   content: SiteDictionary["hero"];
 };
 
-export default function Hero({ lang, content }: HeroProps) {
+export default function Hero({ content }: HeroProps) {
   return (
     <div id="Hero" className="w-full mx-auto h-screen overflow-hidden flex items-center justify-center bg-[#0F2642]">
       <div className="w-full h-full relative">
-        <div className="container mx-auto px-4">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#072b4a99] via-[#05204a99] to-[#031022cc] pointer-events-none" />
-
-          <div className="relative z-10 flex items-center justify-center h-full px-6 md:px-12">
-            <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <Vortex className="absolute inset-0 z-0 bg-transparent" containerClassName="absolute inset-0 h-full pointer-events-none bg-transparent" particleCount={200} rangeY={300} baseRadius={1.5} />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#072b4a99] via-[#05204a99] to-[#031022cc] pointer-events-none" />
+        <div className="container mx-auto left-0 right-0 px-4 absolute top-0 w-full z-10 h-full">
+          <div className="flex items-center justify-center h-full">
+            <div className="w-full mx-auto items-center">
               <div className="text-white py-12 md:py-24 px-2 md:px-0">
-                <div className="mb-6 flex items-center justify-between gap-4">
-                  <span className="inline-block px-4 py-2 bg-[#0b63ff22] text-[#cfe9ff] rounded-full text-sm font-medium">{content.badge}</span>
-                  <LanguageSwitch lang={lang} />
-                </div>
+                <span className="inline-block mb-6 px-4 py-2 bg-[#0b63ff22] text-[#cfe9ff] rounded-full text-sm font-medium">{content.badge}</span>
 
                 <h1 className="mt-4 text-left text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
                   {content.titleLine1}
@@ -50,19 +46,13 @@ export default function Hero({ lang, content }: HeroProps) {
                     </div>
                   ))}
                 </div>
-              </div>
-
-              <div className="flex items-center justify-center px-2">
-                <div className="w-full max-w-md md:max-w-lg lg:max-w-xl">
-                  <Image src="/images/hero-portrait-t.webp" alt={content.imageAlt} width={1400} height={900} className="w-full h-full object-cover block pointer-events-none brightness-90" priority />
-                </div>
-              </div>
+              </div>{" "}
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="hidden absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-transparent to-white/5 pointer-events-none" />
+        <div className="hidden absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-transparent to-white/5 pointer-events-none" />
+      </div>
     </div>
   );
 }

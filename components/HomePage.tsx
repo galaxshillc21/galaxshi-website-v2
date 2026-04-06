@@ -9,6 +9,7 @@ import AuditForm from "@/components/AuditForm";
 import DemoStoreCTA from "@/components/DemoStoreCTA";
 import SolutionsSection from "@/components/SolutionsSection";
 import TrackingStory from "@/components/TrackingStory";
+import Header from "@/components/ui/Header";
 import { Locale, dictionaries } from "@/utils/i18n";
 
 type HomePageProps = {
@@ -20,8 +21,10 @@ export default function HomePage({ lang }: HomePageProps) {
 
   return (
     <>
+      <Header lang={lang} />
+
       <main className="Main" lang={lang}>
-        <Hero lang={lang} content={t.hero} />
+        <Hero content={t.hero} />
 
         <TrackingStory content={t.tracking} />
 

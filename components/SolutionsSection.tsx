@@ -6,7 +6,7 @@ type SolutionsSectionProps = {
 
 export default function SolutionsSection({ content }: SolutionsSectionProps) {
   return (
-    <section className="bg-slate-950 py-20 text-white">
+    <section id="Solutions" className="bg-slate-950 py-20 text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl">
           <p className="inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200">{content.badge}</p>

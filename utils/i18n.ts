@@ -143,9 +143,8 @@ export const dictionaries: Record<Locale, SiteDictionary> = {
   en: {
     hero: {
       badge: "Digital Analytics Experts",
-      titleLine1: "We Implement",
-      titleLine2: "GA4/GTM",
-      titleLine3: "For Every Platform",
+      titleLine1: "We Implement GA4/GTM",
+      titleLine2: "For Every Platform",
       description: "We design measurement implementations so marketing, product, and ecommerce teams can work with reliable data from day one.",
       primaryCta: "Request a free audit",
       secondaryCta: "View services",
@@ -158,7 +157,7 @@ export const dictionaries: Record<Locale, SiteDictionary> = {
     },
     switch: {
       toEnglish: "English",
-      toSpanish: "Espanol",
+      toSpanish: "Español",
     },
     tracking: {
       badge: "GA4 and GTM Demo Store",
@@ -271,7 +270,7 @@ export const dictionaries: Record<Locale, SiteDictionary> = {
         { title: "Clients", description: "+80 companies" },
         { title: "Experience", description: "+5 years" },
       ],
-      teamButton: "Meet the team",
+      teamButton: "Contact us",
       imageAlt: "Team portrait",
     },
     faq: {
@@ -346,10 +345,9 @@ export const dictionaries: Record<Locale, SiteDictionary> = {
   es: {
     hero: {
       badge: "Expertos en Analitica Digital",
-      titleLine1: "Implementamos",
-      titleLine2: "GA4/GTM",
-      titleLine3: "Para Todas las Plataformas",
-      description: "Disenamos implementaciones de medicion para que marketing, producto y ecommerce trabajen con datos confiables desde el dia uno.",
+      titleLine1: "Implementamos GA4/GTM",
+      titleLine2: "Para Todas las Plataformas",
+      description: "Diseñamos implementaciones de medicion para que marketing, producto y ecommerce trabajen con datos confiables desde el dia uno.",
       primaryCta: "Solicitar auditoria gratuita",
       secondaryCta: "Ver servicios",
       imageAlt: "Dashboard de analitica",
@@ -474,7 +472,7 @@ export const dictionaries: Record<Locale, SiteDictionary> = {
         { title: "Clientes", description: "+80 empresas" },
         { title: "Experiencia", description: "+5 anos" },
       ],
-      teamButton: "Conoce al equipo",
+      teamButton: "Contactanos",
       imageAlt: "Retrato del equipo",
     },
     faq: {
