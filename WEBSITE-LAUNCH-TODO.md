@@ -72,20 +72,7 @@ Optional third item later if needed:
 
 ### Core product requirements
 
-- Add a dedicated page or route for the demo store instead of mixing it into the homepage.
-- Show exactly 2 products at launch so the experience stays focused.
-- Give each product a name, price, short description, image, SKU, and playful analytics-themed copy.
-- Add a clear disclaimer that this is a demo experience and no real payment will happen.
-- Store cart state locally in React state or localStorage. No backend is needed.
-
-### Demo commerce flow
-
-- Product listing page.
-- Product detail modal or product detail page.
-- Add to cart interaction.
-- Mini cart or cart page.
-- Fake checkout form.
-- Fake order confirmation page.
+- Add product imagery assets for both demo items to improve visual presentation.
 
 ### Why this matters
 
@@ -97,12 +84,6 @@ This demo will let Galaxshi prove it understands:
 - debugging workflows
 - how UX actions map to analytics events
 
-### Definition of done
-
-- A visitor can go from product view to fake purchase without errors.
-- Every major step emits a visible analytics event.
-- The store feels intentional, even if the payments are fake.
-
 ## 3. Create the analytics event showcase UI
 
 ### Goal
@@ -111,7 +92,6 @@ Make event tracking visible to visitors so the website teaches while it demos.
 
 ### UI behavior
 
-- On desktop, show a compact persistent event drawer on the left or right side of the screen.
 - On mobile, show a lightweight popup, toast stack, or bottom sheet whenever an event fires.
 - The UI should not block the main experience or take too much space.
 
@@ -125,13 +105,8 @@ Make event tracking visible to visitors so the website teaches while it demos.
 
 ### Implementation TODOs
 
-- Build a central analytics event logger in JavaScript or TypeScript.
-- Every tracked action should call that logger instead of directly pushing to `window.dataLayer` in random components.
-- Save recent emitted events in a small in-memory store so the drawer can render them.
-- Add a clear button to reset the visible event history.
 - Add a collapse or hide button for the desktop drawer.
 - Limit the mobile popup stack so it does not overwhelm the screen.
-- Keep the event viewer visually branded and polished, not like a developer-only debug panel.
 
 ### Important constraint
 
@@ -145,31 +120,16 @@ Avoid messy tracking by deciding the event schema before the demo store is built
 
 ### Base events to implement
 
-- `page_view`
-- `view_item_list`
-- `select_item`
-- `view_item`
-- `add_to_cart`
-- `remove_from_cart`
-- `view_cart`
-- `begin_checkout`
 - `add_payment_info` if you want to simulate a fuller checkout journey
-- `purchase`
 - `generate_lead`
 
 ### Data layer planning TODOs
 
-- Create a standard event payload shape and use it consistently.
-- Define item-level parameters for product events: `item_id`, `item_name`, `item_category`, `price`, `quantity`.
 - Define page-level parameters when helpful: `page_type`, `content_group`, `cta_location`.
-- Use GA4-recommended ecommerce structures wherever possible.
-- Add a small helper that safely checks whether `window` and `dataLayer` are available before pushing events.
-- Keep event names lowercase and consistent.
 - Document the schema in the repo so it is easy to maintain.
 
 ### Definition of done
 
-- The site has one documented source of truth for analytics events.
 - New features can plug into tracking without inventing new payload shapes each time.
 
 ## 5. Add a real tracking layer to the codebase
@@ -184,7 +144,6 @@ Move from ideas to actual reusable implementation.
 - Add a typed event map if TypeScript helps keep payloads consistent.
 - Initialize `window.dataLayer` safely on the client.
 - Add a single reusable `trackEvent` helper.
-- Add environment variable support for GA4 ids or GTM container ids.
 - Make it possible to disable analytics cleanly in local development when needed.
 - Make it possible to keep the event viewer active in development and optionally in production for the demo store.
 
@@ -294,7 +253,6 @@ Make future development faster and more consistent.
 - Document the purpose of the site: service website plus analytics demo lab.
 - Document how the fake store works.
 - Document the analytics event map.
-- Document any required environment variables.
 - Document how to run the site locally.
 - Document how to test the tracking flows.
 

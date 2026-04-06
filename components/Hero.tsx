@@ -20,9 +20,8 @@ export default function Hero() {
 
               <h1 className="mt-4 text-left text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
                 Implementamos
-                <span className="block">GA4, Google Tag Manager y</span>
-                <span className="block">Data Layer para</span>
-                <span className="block">WordPress y Next.js/React</span>
+                <span className="block">GA4/GTM</span>
+                <span className="block">Para Todas las Plataformas</span>
               </h1>
 
               <p className="mt-6 max-w-2xl text-lg text-white/85">Soluciones de analítica profesional para medir con precisión y sin errores.</p>
@@ -53,9 +52,12 @@ export default function Hero() {
             </div>
 
             {/* Right column: image card */}
-            <div className="flex items-center justify-center py-12 md:py-24 px-2">
-              <div className="w-full max-w-md md:max-w-lg lg:max-w-xl rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/10 border border-white/5 bg-gradient-to-br from-[#07142a] to-transparent">
-                <Image src="/images/hero-portrait.jpg" alt="Analytic dashboard" width={1400} height={900} className="w-full h-full object-cover block" priority />
+            <div className="flex items-center justify-center px-2">
+              {/* <div className="w-full max-w-md md:max-w-lg lg:max-w-xl rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/10 border border-white/5 bg-gradient-to-br from-[#07142a] to-transparent">
+                <Image src="/images/hero-portrait-t.webp" alt="Analytic dashboard" width={1400} height={900} className="w-full h-full object-cover block" priority />
+              </div> */}
+              <div className="w-full max-w-md md:max-w-lg lg:max-w-xl">
+                <Image src="/images/hero-portrait-t.webp" alt="Analytic dashboard" width={1400} height={900} className="w-full h-full object-cover block" priority />
               </div>
             </div>
           </div>
