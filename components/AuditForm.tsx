@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function AuditForm() {
@@ -17,28 +15,34 @@ export default function AuditForm() {
 
         <div className="mt-10 max-w-3xl mx-auto">
           <div className="bg-white rounded-2xl p-8 shadow-2xl text-slate-700">
-            <form className="space-y-6">
+            <form name="audit-request" method="POST" action="/gracias" data-netlify="true" data-netlify-honeypot="bot-field" className="space-y-6">
+              <input type="hidden" name="form-name" value="audit-request" />
+              <p className="hidden" aria-hidden="true">
+                <label>
+                  Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
+                </label>
+              </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <label className="flex flex-col">
                   <span className="text-sm text-slate-600 mb-2">Nombre completo</span>
-                  <input type="text" placeholder="Tu nombre" className="px-4 py-3 rounded-lg border border-slate-100 bg-white/90 focus:outline-none" />
+                  <input name="nombre" type="text" required placeholder="Tu nombre" className="px-4 py-3 rounded-lg border border-slate-100 bg-white/90 focus:outline-none" />
                 </label>
 
                 <label className="flex flex-col">
                   <span className="text-sm text-slate-600 mb-2">Email</span>
-                  <input type="email" placeholder="tu@email.com" className="px-4 py-3 rounded-lg border border-slate-100 bg-white/90 focus:outline-none" />
+                  <input name="email" type="email" required placeholder="tu@email.com" className="px-4 py-3 rounded-lg border border-slate-100 bg-white/90 focus:outline-none" />
                 </label>
               </div>
 
               <div>
                 <label className="flex flex-col">
                   <span className="text-sm text-slate-600 mb-2">Plataforma</span>
-                  <select className="w-full rounded-lg border border-slate-100 px-4 py-3 bg-white/90 focus:outline-none">
-                    <option>Selecciona tu plataforma</option>
-                    <option>WordPress / WooCommerce</option>
-                    <option>Next.js / React</option>
-                    <option>Shopify</option>
-                    <option>Otro</option>
+                  <select name="plataforma" required className="w-full rounded-lg border border-slate-100 px-4 py-3 bg-white/90 focus:outline-none">
+                    <option value="">Selecciona tu plataforma</option>
+                    <option value="wordpress-woocommerce">WordPress / WooCommerce</option>
+                    <option value="nextjs-react">Next.js / React</option>
+                    <option value="shopify">Shopify</option>
+                    <option value="otro">Otro</option>
                   </select>
                 </label>
               </div>
@@ -46,7 +50,7 @@ export default function AuditForm() {
               <div>
                 <label className="flex flex-col">
                   <span className="text-sm text-slate-600 mb-2">Mensaje</span>
-                  <textarea placeholder="Cuéntanos sobre tu proyecto y qué necesitas..." rows={6} className="w-full rounded-lg border border-slate-100 p-4 bg-white/90 focus:outline-none" />
+                  <textarea name="mensaje" required placeholder="Cuéntanos sobre tu proyecto y qué necesitas..." rows={6} className="w-full rounded-lg border border-slate-100 p-4 bg-white/90 focus:outline-none" />
                 </label>
               </div>
 
