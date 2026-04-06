@@ -1,36 +1,5 @@
-import Hero from "@/components/Hero";
-import Process from "@/components/Process";
-import Services from "@/components/Services";
-import Technologies from "@/components/Technologies";
-import Problems from "@/components/Problems";
-import AboutSection from "@/components/AboutSection";
-import FAQ from "@/components/FAQ";
-import DemoStoreCTA from "@/components/DemoStoreCTA";
-import SolutionsSection from "@/components/SolutionsSection";
-import TrackingStory from "@/components/TrackingStory";
+import HomePage from "@/components/HomePage";
 
 export default function Home() {
-  return (
-    <main className="Main">
-      <Hero />
-
-      <TrackingStory />
-
-      <Problems />
-
-      <SolutionsSection />
-
-      <Services />
-
-      <Process />
-
-      <Technologies />
-
-      <AboutSection />
-
-      <FAQ />
-
-      <DemoStoreCTA />
-    </main>
-  );
+  return <HomePage lang="en" />;
 }
