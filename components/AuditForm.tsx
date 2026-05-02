@@ -58,19 +58,19 @@ export default function AuditForm({ lang, content }: AuditFormProps) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <label className="flex flex-col">
                   <span className="text-sm text-slate-600 mb-2">{content.fullName}</span>
-                  <input name="nombre" type="text" required placeholder={content.placeholderName} className="px-4 py-3 rounded-lg border border-slate-100 bg-white/90 focus:outline-none" />
+                  <input name="nombre" type="text" required placeholder={content.placeholderName} className="px-4 py-3 rounded-lg border border-slate-100 bg-white/90 focus:outline-none" autoComplete="name" />
                 </label>
 
                 <label className="flex flex-col">
                   <span className="text-sm text-slate-600 mb-2">{content.email}</span>
-                  <input name="email" type="email" required placeholder={content.placeholderEmail} className="px-4 py-3 rounded-lg border border-slate-100 bg-white/90 focus:outline-none" />
+                  <input name="email" type="email" required placeholder={content.placeholderEmail} className="px-4 py-3 rounded-lg border border-slate-100 bg-white/90 focus:outline-none" autoComplete="email" />
                 </label>
               </div>
 
               <div>
                 <label className="flex flex-col">
                   <span className="text-sm text-slate-600 mb-2">{content.platform}</span>
-                  <select name="plataforma" required className="w-full rounded-lg border border-slate-100 px-4 py-3 bg-white/90 focus:outline-none">
+                  <select name="plataforma" required className="w-full rounded-lg border border-slate-100 px-4 py-3 bg-white/90 focus:outline-none" autoComplete="off">
                     {content.platformOptions.map((option) => (
                       <option key={option.value || "empty"} value={option.value}>
                         {option.label}
@@ -83,7 +83,7 @@ export default function AuditForm({ lang, content }: AuditFormProps) {
               <div>
                 <label className="flex flex-col">
                   <span className="text-sm text-slate-600 mb-2">{content.message}</span>
-                  <textarea name="mensaje" required placeholder={content.placeholderMessage} rows={6} className="w-full rounded-lg border border-slate-100 p-4 bg-white/90 focus:outline-none" />
+                  <textarea name="mensaje" required placeholder={content.placeholderMessage} rows={6} className="w-full rounded-lg border border-slate-100 p-4 bg-white/90 focus:outline-none" autoComplete="off" />
                 </label>
               </div>
 

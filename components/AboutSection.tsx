@@ -16,7 +16,7 @@ export default function AboutSection({ content }: AboutSectionProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div className="w-full flex items-center justify-center">
             <div className="w-full max-w-[520px] rounded-2xl overflow-hidden shadow-2xl">
-              <Image src="/images/Portrait.jpg" alt={content.imageAlt} width={1400} height={900} className="w-full h-full object-cover block" priority />
+              <Image src="/images/Portrait.webp" alt={content.imageAlt} width={1000} height={1351} className="w-full h-full object-cover block" priority />
             </div>
           </div>
 

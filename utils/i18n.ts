@@ -42,7 +42,6 @@ export type SiteDictionary = {
     badge: string;
     titleLine1: string;
     titleLine2: string;
-    titleLine3: string;
     description: string;
     primaryCta: string;
     secondaryCta: string;
@@ -143,9 +142,8 @@ export const dictionaries: Record<Locale, SiteDictionary> = {
   en: {
     hero: {
       badge: "Digital Analytics Experts",
-      titleLine1: "We Implement",
-      titleLine2: "GA4/GTM",
-      titleLine3: "For Every Platform",
+      titleLine1: "We Implement GA4/GTM",
+      titleLine2: "For Every Platform",
       description: "We design measurement implementations so marketing, product, and ecommerce teams can work with reliable data from day one.",
       primaryCta: "Request a free audit",
       secondaryCta: "View services",
@@ -346,9 +344,8 @@ export const dictionaries: Record<Locale, SiteDictionary> = {
   es: {
     hero: {
       badge: "Expertos en Analitica Digital",
-      titleLine1: "Implementamos",
-      titleLine2: "GA4/GTM",
-      titleLine3: "Para Todas las Plataformas",
+      titleLine1: "Implementamos GA4/GTM",
+      titleLine2: "Para Todas las Plataformas",
       description: "Diseñamos implementaciones de medicion para que marketing, producto y ecommerce trabajen con datos confiables desde el dia uno.",
       primaryCta: "Solicitar auditoria gratuita",
       secondaryCta: "Ver servicios",

@@ -24,7 +24,6 @@ export default function Hero({ content }: HeroProps) {
                 <h1 className="mt-4 text-left text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
                   {content.titleLine1}
                   <span className="block">{content.titleLine2}</span>
-                  <span className="block">{content.titleLine3}</span>
                 </h1>
 
                 <p className="mt-6 max-w-2xl text-lg text-white/85">{content.description}</p>
